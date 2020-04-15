@@ -6,7 +6,7 @@
     "serve": "parcel serve --target renderer ./src/index.html",
     "watch": "parcel watch --target main ./src/main.ts",
     "build:main": "parcel build --target main ./src/main.ts",
-    "build:renderer": "parcel build --target renderer ./src/index.html",
+    "build:renderer": "parcel build --target renderer ./src/renderer.ts",
     "build:preload": "parcel build --target preload ./src/preload.ts",
     "dev": "electron ."
   },
@@ -27,7 +27,7 @@
   },
   "main": "build/main.js",
   "preload": "build/preload.js",
-  "renderer": "build/index.html",
+  "renderer": "build/renderer.js",
   "targets": {
     "main": {
       "context": "electron-main"
