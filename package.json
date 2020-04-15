@@ -4,7 +4,9 @@
   "description": "A minimal Electron application",
   "scripts": {
     "serve": "parcel serve --target renderer ./src/renderer.ts",
-    "watch": "parcel watch --target main ./src/main.ts",
+    "watch:main": "parcel watch --target main ./src/main.ts",
+    "watch:renderer": "parcel watch --target renderer ./src/renderer.ts",
+    "watch:preload": "parcel watch --target preload ./src/preload.ts",
     "build:main": "parcel build --target main ./src/main.ts",
     "build:renderer": "parcel build --target renderer ./src/renderer.ts",
     "build:preload": "parcel build --target preload ./src/preload.ts",
