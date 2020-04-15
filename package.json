@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "scripts": {
-    "serve": "parcel serve --target renderer ./src/renderer.ts",
-    "watch:main": "parcel watch --target main ./src/main.ts",
+    "serve": "parcel serve --target renderer ./index.html",
+
+    "watch:main": "parcel watch --no-hmr --target main ./src/main.ts",
     "watch:renderer": "parcel watch --target renderer ./src/renderer.ts",
-    "watch:preload": "parcel watch --target preload ./src/preload.ts",
+    "watch:preload": "parcel watch --no-hmr --target preload ./src/preload.ts",
+
     "build:main": "parcel build --target main ./src/main.ts",
     "build:renderer": "parcel build --target renderer ./src/renderer.ts",
     "build:preload": "parcel build --target preload ./src/preload.ts",
+
     "dev": "electron ."
   },
   "repository": "https://github.com/electron/electron-quick-start",
@@ -29,7 +32,7 @@
   },
   "main": "build/main.js",
   "preload": "build/preload.js",
-  "renderer": "build/renderer.js",
+  "renderer": "build/index.html",
   "targets": {
     "main": {
       "context": "electron-main"
