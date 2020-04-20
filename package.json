@@ -13,7 +13,7 @@
     "build:renderer": "parcel build --target electron-renderer ./index.html",
     "build:preload": "parcel build --target electron-preload ./src/preload.ts",
 
-    "dev": "electron ."
+    "dev": "electron ./build"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
