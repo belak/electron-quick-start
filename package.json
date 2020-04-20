@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "A minimal Electron application",
   "scripts": {
-    "serve": "parcel serve --target renderer ./index.html",
+    "serve": "parcel serve --target electron-renderer ./index.html",
 
-    "watch:main": "parcel watch --no-hmr --target main ./src/main.ts",
-    "watch:renderer": "parcel watch --target renderer ./src/renderer.ts",
-    "watch:preload": "parcel watch --no-hmr --target preload ./src/preload.ts",
+    "watch:main": "parcel watch --no-hmr --target electron-main ./src/main.ts",
+    "watch:renderer": "parcel watch --target electron-renderer ./index.html",
+    "watch:preload": "parcel watch --no-hmr --target electron-preload ./src/preload.ts",
 
-    "build:main": "parcel build --target main ./src/main.ts",
-    "build:renderer": "parcel build --target renderer ./src/renderer.ts",
-    "build:preload": "parcel build --target preload ./src/preload.ts",
+    "build:main": "parcel build --target electron-main ./src/main.ts",
+    "build:renderer": "parcel build --target electron-renderer ./index.html",
+    "build:preload": "parcel build --target electron-preload ./src/preload.ts",
 
     "dev": "electron ."
   },
@@ -30,17 +30,17 @@
     "parcel": "^2.0.0-nightly.212",
     "typescript": "^3.8.3"
   },
-  "main": "build/main.js",
-  "preload": "build/preload.js",
-  "renderer": "build/index.html",
+  "electron-main": "build/index.js",
+  "electron-preload": "build/preload.js",
+  "electron-renderer": "build/index.html",
   "targets": {
-    "main": {
+    "electron-main": {
       "context": "electron-main"
     },
-    "preload": {
+    "electron-preload": {
       "context": "electron-renderer"
     },
-    "renderer": {
+    "electron-renderer": {
       "context": "electron-renderer"
     }
   }
